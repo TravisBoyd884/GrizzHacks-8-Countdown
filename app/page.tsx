@@ -5,11 +5,10 @@ import FAQSection from "@/components/FAQ";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-blue-400 text-white">
+    <div className="text-white">
       <Navbar />
 
-      {/* Add top padding so anchored sections aren’t hidden behind sticky navbar */}
-      <main className="pt-20">
+      <main>
         <Hero />
         <SponsorsSection />
         <FAQSection />
