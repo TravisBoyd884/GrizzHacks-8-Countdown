@@ -1,4 +1,5 @@
 "use client";
+import { roboto_mono } from "@/app/ui/fonts";
 
 import { useEffect, useMemo, useState } from "react";
 
@@ -45,27 +46,36 @@ export default function Countdown({ targetISO }: { targetISO: string }) {
 
   return (
     <div className="mt-8 flex w-full justify-center sm:justify-start gap-3 sm:gap-6">
-      {items.map((item, i) => (
-        <div key={item.label} className="flex flex-col items-center">
-          {/* Top row: number + separator */}
-          <div className="flex items-baseline">
-            <div className="font-timer text-4xl sm:text-5xl font-bold leading-none tabular-nums">
-              {item.value}
+      {items.map((item, i) => {
+        return (
+          <div
+            key={item.label}
+            className={`${roboto_mono.className} antialiased flex flex-col`}
+          >
+            {/* Number + separator */}
+            <div className="flex items-baseline justify-center">
+              <div
+                className={`w-[2ch] text-center font-timer text-4xl sm:text-5xl font-bold leading-none tabular-nums`}
+              >
+                {item.value}
+              </div>
+
+              {i < items.length - 1 && (
+                <div className="w-[1ch] text-center font-timer text-3xl sm:text-5xl font-bold leading-none tabular-nums">
+                  :
+                </div>
+              )}
             </div>
 
-            {i < items.length - 1 && (
-              <div className="ml-2 font-timer text-4xl sm:text-5xl font-bold leading-none tabular-nums">
-                :
-              </div>
-            )}
+            {/* Label: left-justified under number column */}
+            <div
+              className={`w-[2ch] mt-1 text-left text-[10px] uppercase tracking-wide text-white/60`}
+            >
+              {item.label}
+            </div>
           </div>
-
-          {/* Lower Labels */}
-          <div className="mt-1 text-[10px] uppercase tracking-wide text-white/60">
-            {item.label}
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

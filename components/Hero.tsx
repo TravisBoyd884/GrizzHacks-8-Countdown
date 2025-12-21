@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Content */}
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-30 lg:py-30">
         <div className="p-8 text-center sm:text-left">
-          <h2>Coming March 28th</h2>
+          <h2 className="text-white/80">Coming March 28th</h2>
           <h1 className="text-3xl font-bold text-white sm:text-5xl">
             GrizzHacks 8
           </h1>
