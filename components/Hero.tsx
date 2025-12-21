@@ -24,7 +24,7 @@ export default function Hero() {
             GrizzHacks 8
           </h1>
 
-          <Countdown targetISO="2026-03-28T09:00:00-04:00" />
+          <Countdown targetISO="2026-03-28T12:00:00-04:00" />
         </div>
       </div>
     </section>
