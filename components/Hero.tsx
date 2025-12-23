@@ -1,20 +1,13 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 
 const Countdown = dynamic(() => import("./Countdown"), { ssr: false });
+const HeroBGIMage = dynamic(() => import("./HeroBGImage"), { ssr: false });
 
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="/hero-bg-sunrise.svg"
-        alt="hero background"
-        fill
-        priority
-        className="absolute object-cover object-bottom -z-10 max-h-screen"
-      />
+      <HeroBGIMage />
 
       {/* Content */}
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-30 lg:py-30">
