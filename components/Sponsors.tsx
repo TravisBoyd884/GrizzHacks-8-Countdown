@@ -3,67 +3,121 @@ import Image from "next/image";
 
 export default function Sponsors() {
   return (
-    <section id="sponsors" className="bg-[#88C57F] min-h-screen flex flex-col items-center justify-center py-24">
+    <section id="sponsors" className="bg-[#88C57F] min-h-screen flex flex-col items-center justify-center py-20">
       
       {/*Header*/}
-      <div className="text-center mb-8 z-10">
-        <h2 className="text-4xl md:text-5xl font-medium mb-12 text-white">
+      <div className="text-center mb-12 z-10 px-4">
+        <h2 className="text-4xl md:text-5xl font-medium mb-4 text-white">
           Interested in Sponsoring GrizzHacks?
         </h2>
-
-        {/*Sub-header*/}
-        <div className="w-full max-w-6xl mx-auto px-8 text-left">
+        <div className="w-full max-w-6xl mx-auto text-left pl-4 md:pl-20">
           <p className="text-xl text-white/90 font-medium">
             Last Year We Had...
           </p>
         </div>
       </div>
 
-      {/*Content*/}
-      <div className="relative w-full max-w-6xl px-4">
+      {/*Flowers*/}
+      <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 mb-20 px-4">
         
-        {/*Flowers*/}
-        <Image
-          src="/sponsor_interest.svg"
-          alt="Sponsor Interest"
-          width={1200}
-          height={600}
-          className="w-full h-auto"
-          priority
-        />
+        {/*Purple Flower*/}
+        <FlowerCard 
+            imageSrc="/purple_flower.svg" 
+            color="text-white" 
+            scale={1.5}
+        >
 
-        <div className="absolute inset-0 grid grid-cols-3 text-center items-center text-white">
-          
-          {/* Purple Flower */}
-          <div className="flex flex-col items-center justify-center pt-4">
-            <span className="text-sm font-medium">Over</span>
-            <span className="text-5xl md:text-7xl font-bold leading-tight">170</span>
-            <p className="text-xs md:text-sm max-w-[120px] leading-tight mt-1">
-              Enthusiastic Hackers ready to change the world at GrizzHacks 7
-            </p>
-          </div>
+          {/* --- POSITIONING WRAPPER ---
+              This <div> wraps all the text so we can move it together.
+              - translate-x-2:  Moves text RIGHT (increase number to move further)
+              - -translate-x-2: Moves text LEFT
+              - translate-y-4:  Moves text DOWN
+              - -translate-y-4: Moves text UP
+          */}
+            <div className="-translate-x-7 -translate-y-3">
+              <span className="block text-base font-medium mb-[-5px]">Over</span>
+              <span className="block text-6xl md:text-7xl font-bold leading-tight">170</span>
+              <p className="text-sm max-w-[140px] mx-auto leading-tight mt-1 font-medium">
+                Enthusiastic Hackers ready to change the world
+              </p>
+            </div>
+        </FlowerCard>
 
-          {/*Orange Flower*/}
-          <div className="flex flex-col items-center justify-center pt-10">
-             <span className="text-sm font-medium">Over</span>
-             <span className="text-5xl md:text-7xl font-bold leading-tight">50</span>
-             <p className="text-xs md:text-sm max-w-[120px] leading-tight mt-1">
-               Incredible Projects demoed at GrizzHacks 7
-             </p>
-          </div>
+        {/*Orange Flower*/}
+        <FlowerCard 
+            imageSrc="/orange_flower.svg" 
+            color="text-white" 
+            scale={1.5}
+        >
+            <div className="translate-x-0 -translate-y-3">
+              <span className="block text-base font-medium mb-[-5px]">Over</span>
+              <span className="block text-6xl md:text-7xl font-bold leading-tight">50</span>
+              <p className="text-sm max-w-[160px] mx-auto leading-tight mt-1 font-medium">
+                Incredible projects demoed at GrizzHacks 7
+              </p>
+            </div>
+        </FlowerCard>
 
-          {/*Red Flower*/}
-          <div className="flex flex-col items-center justify-center pt-4">
-             <span className="text-sm font-medium">Some Text</span>
-             <span className="text-5xl md:text-7xl font-bold leading-tight">40%</span>
-             <p className="text-xs md:text-sm max-w-[120px] leading-tight mt-1">
-               find real stat soon
-             </p>
-          </div>
+        {/*Red Flower*/}
+        <FlowerCard 
+            imageSrc="/red_flower.svg" 
+            color="text-white" 
+            scale={1.2}
+        >
+            <div className="translate-x-4 -translate-y-3">
+              <span className="block text-base font-medium mb-[-5px]">Some text</span>
+              <span className="block text-6xl md:text-7xl font-bold leading-tight">40%</span>
+              <p className="text-sm max-w-[140px] mx-auto leading-tight mt-1 font-medium">
+                find real stat soon
+              </p>
+            </div>
+        </FlowerCard>
 
-        </div>
+      </div>
+
+      {/*Footer*/}
+      <div className="text-center space-y-2 px-4 z-10">
+        <h3 className="text-2xl md:text-3xl font-normal text-white">
+          Interested in being a part of GrizzHacks?
+        </h3>
+        <p className="text-2xl md:text-3xl font-normal text-white">
+          Email <a href="mailto:grizzhacksou@gmail.com" className="underline decoration-white/50 hover:decoration-white transition-all">grizzhacksou@gmail.com</a>
+        </p>
       </div>
 
     </section>
+  );
+}
+
+function FlowerCard({ 
+  children, 
+  imageSrc, 
+  color,
+  scale = 1
+}: { 
+  children: React.ReactNode, 
+  imageSrc: string, 
+  color?: string,
+  scale?: number
+}) {
+  return (
+    <div className="relative flex items-center justify-center w-72 h-72 md:w-80 md:h-80 shrink-0">
+      
+      <div 
+        className="absolute inset-0 w-full h-full"
+        style={{ transform: `scale(${scale})` }}
+      >
+        <Image 
+          src={imageSrc} 
+          alt="Flower Background" 
+          fill 
+          className="object-contain" 
+        />
+      </div>
+
+      <div className={`relative z-10 text-center translate-y-2 ${color}`}>
+        {children}
+      </div>
+    </div>
   );
 }
