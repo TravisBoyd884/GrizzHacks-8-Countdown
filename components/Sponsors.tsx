@@ -70,7 +70,7 @@ export default function Sponsors() {
             <div className="translate-x-3.5 -translate-y-3">
               {/*<span className="block text-base font-medium mb-[-5px]">Exactly</span>*/}
               <span className="block text-6xl md:text-7xl font-bold leading-tight">10</span>
-              <p className="text-sm max-w-[140px] mx-auto leading-tight mt-1 font-medium">
+              <p className="text-sm max-w-[160px] mx-auto leading-tight mt-1 font-medium">
                 Universities represented at GrizzHacks 7
               </p>
             </div>
