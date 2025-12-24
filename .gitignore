@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Linux Metadata that causes issues with windows users
+*:Zone.Identifier
