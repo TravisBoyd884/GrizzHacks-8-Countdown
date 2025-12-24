@@ -66,11 +66,10 @@ export default function Sponsors() {
             color="text-white" 
             scale={1.2}
         >
-            {/*Stat ideas are universities represented or number of sponsors at GH7
-              -Need to replace dummy data with real data*/}
+
             <div className="translate-x-3.5 -translate-y-3">
-              <span className="block text-base font-medium mb-[-5px]">Exactly</span>
-              <span className="block text-6xl md:text-7xl font-bold leading-tight">15</span>
+              {/*<span className="block text-base font-medium mb-[-5px]">Exactly</span>*/}
+              <span className="block text-6xl md:text-7xl font-bold leading-tight">10</span>
               <p className="text-sm max-w-[140px] mx-auto leading-tight mt-1 font-medium">
                 Universities represented at GrizzHacks 7
               </p>
@@ -85,8 +84,7 @@ export default function Sponsors() {
           Interested in being a part of GrizzHacks?
         </h3>
         <p className="text-2xl md:text-3xl font-normal text-white">
-          {/*Replace beans link with google form link*/}
-          Fill out our interest form <a href="https://en.wikipedia.org/wiki/Baked_beans" target="_blank" className="underline decoration-white/50 hover:decoration-white transition-all">here</a>!
+          Fill out our interest form <a href="https://forms.gle/Wr1DTSs2mJ955YWWA" target="_blank" className="underline decoration-white/50 hover:decoration-white transition-all">here</a>!
         </p>
       </div>
 
