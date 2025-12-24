@@ -3,20 +3,22 @@ import Image from "next/image";
 
 export default function Sponsors() {
   return (
-    <section id="sponsors" className="bg-[#88C57F] min-h-screen flex flex-col items-center justify-center py-20">
+    <section id="sponsors" className="bg-[#0B6B4B] min-h-screen flex flex-col items-center justify-center py-20">
       
       {/*Header*/}
-      <div className="text-center mb-12 z-10 px-4">
+      <div className="text-center mb-5 z-10 px-4">
         <h2 className="text-4xl md:text-5xl font-medium mb-4 text-white">
           Interested in Sponsoring GrizzHacks?
         </h2>
-        <div className="w-full max-w-6xl mx-auto text-left pl-4 md:pl-20">
-          <p className="text-xl text-white/90 font-medium">
-            Last Year We Had...
-          </p>
-        </div>
       </div>
 
+      {/*Subheader*/}
+      <div className="w-full max-w-6xl mx-auto text-left mb-8 pl-4 md:pl-0">
+        <p className="text-xl text-white/90 font-medium">
+          Last Year We Had...
+        </p>
+      </div>
+      
       {/*Flowers*/}
       <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 mb-20 px-4">
         
@@ -34,7 +36,7 @@ export default function Sponsors() {
               - translate-y-4:  Moves text DOWN
               - -translate-y-4: Moves text UP
           */}
-            <div className="-translate-x-6 -translate-y-2">
+            <div className="-translate-x-8 -translate-y-2">
               <span className="block text-base font-medium mb-[-5px]">Over</span>
               <span className="block text-6xl md:text-7xl font-bold leading-tight">170</span>
               <p className="text-sm max-w-[140px] mx-auto leading-tight mt-1 font-medium">
@@ -64,11 +66,13 @@ export default function Sponsors() {
             color="text-white" 
             scale={1.2}
         >
+            {/*Stat ideas are universities represented or number of sponsors at GH7
+              -Need to replace dummy data with real data*/}
             <div className="translate-x-3.5 -translate-y-3">
-              <span className="block text-base font-medium mb-[-5px]">Some text</span>
-              <span className="block text-6xl md:text-7xl font-bold leading-tight">40%</span>
+              <span className="block text-base font-medium mb-[-5px]">Exactly</span>
+              <span className="block text-6xl md:text-7xl font-bold leading-tight">15</span>
               <p className="text-sm max-w-[140px] mx-auto leading-tight mt-1 font-medium">
-                find real stat soon
+                Universities represented at GrizzHacks 7
               </p>
             </div>
         </FlowerCard>
@@ -81,7 +85,8 @@ export default function Sponsors() {
           Interested in being a part of GrizzHacks?
         </h3>
         <p className="text-2xl md:text-3xl font-normal text-white">
-          Email <a href="mailto:grizzhacksou@gmail.com" className="underline decoration-white/50 hover:decoration-white transition-all">grizzhacksou@gmail.com</a>
+          {/*Replace beans link with google form link*/}
+          Fill out our interest form <a href="https://en.wikipedia.org/wiki/Baked_beans" target="_blank" className="underline decoration-white/50 hover:decoration-white transition-all">here</a>!
         </p>
       </div>
 
