@@ -34,7 +34,7 @@ export default function Sponsors() {
               - translate-y-4:  Moves text DOWN
               - -translate-y-4: Moves text UP
           */}
-            <div className="-translate-x-7 -translate-y-3">
+            <div className="-translate-x-6 -translate-y-2">
               <span className="block text-base font-medium mb-[-5px]">Over</span>
               <span className="block text-6xl md:text-7xl font-bold leading-tight">170</span>
               <p className="text-sm max-w-[140px] mx-auto leading-tight mt-1 font-medium">
@@ -49,7 +49,7 @@ export default function Sponsors() {
             color="text-white" 
             scale={1.5}
         >
-            <div className="translate-x-0 -translate-y-3">
+            <div className="-translate-x-0 -translate-y-2.5">
               <span className="block text-base font-medium mb-[-5px]">Over</span>
               <span className="block text-6xl md:text-7xl font-bold leading-tight">50</span>
               <p className="text-sm max-w-[160px] mx-auto leading-tight mt-1 font-medium">
@@ -64,7 +64,7 @@ export default function Sponsors() {
             color="text-white" 
             scale={1.2}
         >
-            <div className="translate-x-4 -translate-y-3">
+            <div className="translate-x-3.5 -translate-y-3">
               <span className="block text-base font-medium mb-[-5px]">Some text</span>
               <span className="block text-6xl md:text-7xl font-bold leading-tight">40%</span>
               <p className="text-sm max-w-[140px] mx-auto leading-tight mt-1 font-medium">
