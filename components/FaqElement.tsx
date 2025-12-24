@@ -21,8 +21,8 @@ const FaqElement: React.FC<FaqElementProps> = ({
     return (
         <>
             <details
-              key={question}
-              className="group rounded-xl border border-white/10 bg-white/5 p-4"
+              className="group rounded-xl border border-white/10 bg-white/5 p-4 z-1"
+              onClick={onToggle}
             >
               <summary className="cursor-pointer list-none font-medium text-white/90">
                 <div className="flex items-center justify-between">
@@ -32,8 +32,20 @@ const FaqElement: React.FC<FaqElementProps> = ({
                   </span>
                 </div>
               </summary>
+            
+            {active && (
               <div className="mt-3 text-sm text-white/70">{answer}</div>
+            )}
             </details>
+
+            {/* frog guy */}
+            <div className="relative">
+                {active && (
+                    <div className="absolute -top-[3rem] right-0 w-20 -z-1">
+                        <img src="/freddy.svg" alt="froggy" className="w-full h-auto"/> {/*might need to fix path */}
+                    </div>
+                )}
+            </div>
         </>
     );
 };
