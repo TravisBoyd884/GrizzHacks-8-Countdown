@@ -1,7 +1,19 @@
 const faqs = [
-  { q: "Question placeholder?", a: "Answer placeholder." },
-  { q: "Another question placeholder?", a: "Another answer placeholder." },
-  { q: "Third question placeholder?", a: "Third answer placeholder." },
+  { q: "What is a hackathon?", a: "Answer placeholder." },
+  { 
+    q: "Who can attend?",
+    a: (
+      <>
+        Anyone who is 18 or older and is currently a student (school/major does not matter), or who has graduated within the last year, is free to apply.
+        All participants must adhere to the{" "}
+        <a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md" target="_blank" className="text-blue-400 underline">
+          MLH Code of Conduct
+        </a>.
+      </>
+    ),
+  },
+  { q: "How many people can be in a team?", a: "Third answer placeholder." },
+  { q: "Fourth question placeholder?", a: "Fourth answer placeholder." },
 ];
 
 export default function FAQSection() {
