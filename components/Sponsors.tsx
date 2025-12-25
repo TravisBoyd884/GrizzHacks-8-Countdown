@@ -4,24 +4,16 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 function getGrassColorForHour(hour: number): string {
-  // Midnight: 8pm-6am
-  if (hour >= 20 || hour < 6)
+  // Sunrise: 6am-2pm
+  if (hour >= 6 && hour < 16)
+    return "#88c57f";
+  
+  // Twilight: 2pm-8pm
+  if (hour >= 16 && hour < 20)
     return "#0b6b4b";
   
-  // Morning: 6am-2pm
-  if (hour >= 6 && hour < 14)
-    return "#88c57f";
-  
-  // Day: 2pm-6pm (normal color)
-  if (hour >= 14 && hour < 18)
-    return "#0B6B4B";
-  
-  // Twilight: 6pm-8pm
-  if (hour >= 18 && hour < 20)
-    return "#88c57f";
-  
-  // Fallback (shouldn't happen)
-  return "#0B6B4B";
+  // Midnight: 8pm-6am
+  return "#0b6b4b";
 }
 
 export default function Sponsors() {
