@@ -25,7 +25,7 @@ export default function Sponsors() {
         {/*Purple Flower*/}
         <FlowerCard 
             imageSrc="/purple_flower.svg" 
-            color="text-white" 
+            color="text-white"
             scale={1.5}
         >
 
@@ -113,7 +113,8 @@ function FlowerCard({
         <Image 
           src={imageSrc} 
           alt="Flower Background" 
-          fill 
+          fill
+          sizes="(max-width: 768px) 288px, 320px"
           className="object-contain" 
         />
       </div>
