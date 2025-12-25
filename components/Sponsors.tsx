@@ -1,9 +1,51 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
+function getGrassColorForHour(hour: number): string {
+  // Midnight: 8pm-6am
+  if (hour >= 20 || hour < 6)
+    return "#0b6b4b";
+  
+  // Morning: 6am-2pm
+  if (hour >= 6 && hour < 14)
+    return "#88c57f";
+  
+  // Day: 2pm-6pm (normal color)
+  if (hour >= 14 && hour < 18)
+    return "#0B6B4B";
+  
+  // Twilight: 6pm-8pm
+  if (hour >= 18 && hour < 20)
+    return "#88c57f";
+  
+  // Fallback (shouldn't happen)
+  return "#0B6B4B";
+}
+
 export default function Sponsors() {
+  const [grassColor, setGrassColor] = useState(() => 
+    getGrassColorForHour(new Date().getHours())
+  );
+
+  useEffect(() => {
+    const update = () => {
+      setGrassColor(getGrassColorForHour(new Date().getHours()));
+    };
+
+    update();
+    // update every minute
+    const id = setInterval(update, 60_000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <section id="sponsors" className="bg-[#0B6B4B] min-h-screen flex flex-col items-center justify-center py-20">
+    <section
+      id="sponsors"
+      className="min-h-screen flex flex-col items-center justify-center py-20"
+      style={{ backgroundColor: grassColor }}
+    >
       
       {/*Header*/}
       <div className="text-center mb-5 z-10 px-4">
