@@ -1,9 +1,43 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
+function getGrassColorForHour(hour: number): string {
+  // Sunrise: 6am-2pm
+  if (hour >= 6 && hour < 16)
+    return "#88c57f";
+  
+  // Twilight: 2pm-8pm
+  if (hour >= 16 && hour < 20)
+    return "#0b6b4b";
+  
+  // Midnight: 8pm-6am
+  return "#0b6b4b";
+}
+
 export default function Sponsors() {
+  const [grassColor, setGrassColor] = useState(() => 
+    getGrassColorForHour(new Date().getHours())
+  );
+
+  useEffect(() => {
+    const update = () => {
+      setGrassColor(getGrassColorForHour(new Date().getHours()));
+    };
+
+    update();
+    // update every minute
+    const id = setInterval(update, 60_000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <section id="sponsors" className="bg-[#0B6B4B] min-h-screen flex flex-col items-center justify-center py-20">
+    <section
+      id="sponsors"
+      className="min-h-screen flex flex-col items-center justify-center py-20"
+      style={{ backgroundColor: grassColor }}
+    >
       
       {/*Header*/}
       <div className="text-center mb-5 z-10 px-4">
@@ -25,7 +59,7 @@ export default function Sponsors() {
         {/*Purple Flower*/}
         <FlowerCard 
             imageSrc="/purple_flower.svg" 
-            color="text-white" 
+            color="text-white"
             scale={1.5}
         >
 
@@ -113,7 +147,8 @@ function FlowerCard({
         <Image 
           src={imageSrc} 
           alt="Flower Background" 
-          fill 
+          fill
+          sizes="(max-width: 768px) 288px, 320px"
           className="object-contain" 
         />
       </div>

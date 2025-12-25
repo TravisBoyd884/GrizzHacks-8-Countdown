@@ -6,13 +6,14 @@ import { useEffect, useState } from "react";
 type Bg = { src: string; alt: string };
 
 function getBgForHour(hour: number): Bg {
-  // 6am-2pm
+  // 6am-4pm
   if (hour >= 6 && hour < 16)
     return { src: "/hero-bg-sunrise.svg", alt: "Sunrise" };
 
-  // 2pm-8pm
+  // 4pm-8pm
   if (hour >= 16 && hour < 20)
     return { src: "/hero-bg-twilight.svg", alt: "Twilight" };
+  
   return { src: "/hero-bg-midnight.svg", alt: "Midnight" }; // 8pm–6am
 }
 
