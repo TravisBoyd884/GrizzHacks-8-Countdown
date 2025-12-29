@@ -1,33 +1,76 @@
-const faqs = [
-  { q: "Question placeholder?", a: "Answer placeholder." },
-  { q: "Another question placeholder?", a: "Another answer placeholder." },
-  { q: "Third question placeholder?", a: "Third answer placeholder." },
-];
+"use client";
+
+import React, { useState } from "react";
+import faqs from "../data/faq.json";
+import FaqElement from "./FaqElement";
+
 
 export default function FAQSection() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
   return (
-    <section id="faq" className="min-h-screen">
-      <div className="mx-auto max-w-6xl px-4 py-20">
-        <h2 className="text-2xl font-semibold">FAQ</h2>
-        <div className="mt-10 space-y-3">
-          {faqs.map((item) => (
-            <details
-              key={item.q}
-              className="group rounded-xl border border-white/10 bg-white/5 p-4"
-            >
-              <summary className="cursor-pointer list-none font-medium text-white/90">
-                <div className="flex items-center justify-between">
-                  <span>{item.q}</span>
-                  <span className="text-white/50 group-open:rotate-45 transition">
-                    +
-                  </span>
-                </div>
-              </summary>
-              <div className="mt-3 text-sm text-white/70">{item.a}</div>
-            </details>
-          ))}
+    <>
+      <section id="faq" className="min-h-screen bg-[#023C0F]">
+        <div className="mx-auto w-[80vw] px-4 py-20">
+          {/* Header */}
+          <h2 className="text-[5rem] text-center font-semibold">FAQ's</h2>
+
+          {/* Desktop View */}
+          <div className="hidden lg:flex flex-row gap-2 w-full justify-center">
+            {/* left column */}
+            <div className="flex flex-col w-1/2 mt-1 gap-1">
+              {faqs.map((question, index) =>
+                index % 2 === 0 ? (
+                  <FaqElement
+                    key={index}
+                    question={question.q}
+                    answer={question.a}
+                    active={index === activeFaq}
+                    show={true}
+                    onToggle={() =>
+                      setActiveFaq(activeFaq === index ? null : index)
+                    } // Toggle active FAQ
+                  />
+                ) : null
+              )}
+            </div>
+            {/* right column */}
+            <div className="flex flex-col w-1/2 mt-1 gap-1">
+              {faqs.map((question, index) =>
+                index % 2 !== 0 ? (
+                  <FaqElement
+                    key={index}
+                    question={question.q}
+                    answer={question.a}
+                    active={index === activeFaq}
+                    show={true}
+                    onToggle={() =>
+                      setActiveFaq(activeFaq === index ? null : index)
+                    } // Toggle active FAQ
+                  />
+                ) : null
+              )}
+            </div>
+          </div>
+
+          {/* Mobile View */}
+          <div className="lg:hidden mt-10 space-y-3">
+            {faqs.map((question, index) => (
+              <FaqElement 
+                key={index}
+                question={question.q}
+                answer={question.a}
+                active={index === activeFaq}
+                show={true}
+                onToggle={() =>
+                  setActiveFaq(activeFaq === index ? null : index)
+                } // Toggle active FAQ
+              />
+            
+            ))}
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
+    </>  
   );
 }
