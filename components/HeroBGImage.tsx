@@ -21,7 +21,18 @@ export default function HeroBGImage() {
   const [bg, setBg] = useState<Bg>(() => getBgForHour(new Date().getHours()));
 
   useEffect(() => {
-    const update = () => setBg(getBgForHour(new Date().getHours()));
+    const isMobile = window.matchMedia("(max-width: 640px)").matches;
+
+    const update = () => {
+      const baseBg = getBgForHour(new Date().getHours());
+
+      setBg({
+        ...baseBg,
+        src: isMobile
+          ? baseBg.src.replace("/hero-", "/mobile-hero-")
+          : baseBg.src,
+      });
+    };
 
     update();
     // update every minute
