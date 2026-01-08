@@ -108,7 +108,7 @@ export default function Sponsors() {
       {/*Footer*/}
       <div className="text-center space-y-2 px-4 z-10">
         <h3 className="text-2xl md:text-3xl font-normal text-white">
-          Interested in being a part of GrizzHacks?
+          Interested in sponsoring GrizzHacks?
         </h3>
         <p className="text-2xl md:text-3xl font-normal text-white">
           Fill out our interest form <a href="https://forms.gle/Wr1DTSs2mJ955YWWA" target="_blank" className="underline decoration-white/50 hover:decoration-white transition-all">here</a>!
