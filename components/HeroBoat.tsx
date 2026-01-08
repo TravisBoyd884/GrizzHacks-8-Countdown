@@ -8,7 +8,7 @@ export default function HeroBoat() {
       rel="noopener noreferrer"
 
       //style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
-      className="absolute bottom-[45%] left-1/2 -translate-x-1/2 w-40 transition-transform duration-300 hover:scale-105 md:bottom-[30%] md:left-[45%] md:w-64"
+      className="absolute bottom-[30%] left-1/2 -translate-x-1/2 w-40 transition-transform duration-300 hover:scale-105 md:bottom-[30%] md:left-[45%] md:w-64"
       title="GrizzHacks 8 Interest Form"
     >
       <Image
