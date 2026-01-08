@@ -62,14 +62,7 @@ export default function Sponsors() {
             color="text-white"
             scale={1.5}
         >
-
-          {/* --- POSITIONING WRAPPER ---
-              This <div> wraps all the text so we can move it together.
-              - translate-x-2:  Moves text RIGHT (increase number to move further)
-              - -translate-x-2: Moves text LEFT
-              - translate-y-4:  Moves text DOWN
-              - -translate-y-4: Moves text UP
-          */}
+          
             <div className="-translate-x-8 -translate-y-2">
               <span className="block text-base font-medium mb-[-5px]">Over</span>
               <span className="block text-6xl md:text-7xl font-bold leading-tight">170</span>
