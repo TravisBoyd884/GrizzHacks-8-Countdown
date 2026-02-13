@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function HeroBoat() {
   return (
     <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSd6GW3csAmCLZfZWuXwkQOYYuk1ZP0iauyuwh28QMN0ekvEWA/viewform?usp=dialog" 
+      href="https://form.typeform.com/to/E7FQOwID" 
       target="_blank"
       rel="noopener noreferrer"
 
