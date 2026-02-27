@@ -1,7 +1,11 @@
+"use client";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import SponsorsSection from "@/components/Sponsors";
 import FAQSection from "@/components/FAQ";
+import dynamic from "next/dynamic";
+const SponsorsSection = dynamic(() => import("@/components/Sponsors"), {
+  ssr: false,
+});
 
 export default function Page() {
   return (
